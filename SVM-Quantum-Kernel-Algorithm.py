@@ -1,6 +1,6 @@
 from datasets import *
 from qiskit_aqua.utils import split_dataset_to_data_and_labels
-from qiskit_aqua.input import get_input_instance
+from qiskit_aqua.input import EnergyInput
 from qiskit_aqua import run_algorithm
 import numpy as np
 
@@ -21,7 +21,7 @@ aqua_dict = {
     'backend': {'name': 'qasm_simulator', 'shots': 256}
 }
 
-algo_input = get_input_instance('SVMInput')
+algo_input = EnergyInput('SVMInput')
 algo_input.training_dataset = training_input
 algo_input.test_dataset = test_input
 algo_input.datapoints = total_array
